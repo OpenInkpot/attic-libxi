@@ -1,0 +1,76 @@
+Source: libxi
+Section: gui
+Priority: optional
+Maintainer: Mikhail Gusarov <dottedmag@dottedmag.net>
+Build-Depends: debhelper (>= 5.0.0), libx11-dev (>= 1:1.1.99.1), libxext-dev (>= 1:1.0.99.1), x11proto-input-dev (>= 1.4), pkg-config, quilt, xorg-util-macros, automake, libtool
+XCS-Cross-Host-Build-Depends: debhelper (>= 4.0.0), pkg-config, quilt, xorg-util-macros, automake, libtool
+XCS-Cross-Build-Depends: libx11-dev (>= 1:1.1.99.1), libxext-dev (>= 1:1.0.99.1), x11proto-input-dev (>= 1.4)
+Standards-Version: 3.7.3
+
+Package: libxi6
+Section: gui
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: X11 Input extension library
+ libXi provides an X Window System client interface to the XINPUT
+ extension to the X protocol.
+ .
+ The Input extension allows setup and configuration of multiple input devices,
+ and will soon allow hotplugging of input devices; to be added and removed on
+ the fly.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ <URL:http://xorg.freedesktop.org>
+ <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libXi
+
+Package: libxi6-dbg
+Section: debug
+Architecture: any
+Priority: extra
+Depends: ${shlibs:Depends}, ${misc:Depends}, libxi6 (= ${binary:Version})
+Description: X11 Input extension library (debug package)
+ libXi provides an X Window System client interface to the XINPUT
+ extension to the X protocol.
+ .
+ The Input extension allows setup and configuration of multiple input devices,
+ and will soon allow hotplugging of input devices; to be added and removed on
+ the fly.
+ .
+ This package contains the debug versions of the library found in libxi6.
+ Non-developers likely have little use for this package.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ <URL:http://xorg.freedesktop.org>
+ <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libXi
+
+Package: libxi-dev
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libxi6 (= ${binary:Version}), libx11-dev, libxext-dev, x11proto-input-dev
+Pre-Depends: x11-common (>= 1:7.0.0)
+Description: X11 Input extension library (development headers)
+ libXi provides an X Window System client interface to the XINPUT
+ extension to the X protocol.
+ .
+ The Input extension allows setup and configuration of multiple input devices,
+ and will soon allow hotplugging of input devices; to be added and removed on
+ the fly.
+ .
+ This package contains the development headers for the library found in
+ libxi6.  Non-developers likely have little use for this package.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ <URL:http://xorg.freedesktop.org>
+ <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libXi
